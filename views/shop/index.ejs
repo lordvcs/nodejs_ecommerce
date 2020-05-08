@@ -1,0 +1,137 @@
+<div class="row">
+  <div class="card-deck">
+    <!-- <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/57445/golden-pheasant-bird-exotic-wildlife-57445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Golden Pheasant</h5>
+          <p class="card-text description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorem ad voluptates aut sunt at totam molestiae tenetur. Eius ab
+            repellat inventore doloribus illo doloremque iste explicabo aliquam
+            voluptas quam?
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;12</span>
+            <a href="#" class="btn btn-success ml-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/57445/golden-pheasant-bird-exotic-wildlife-57445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Golden Pheasant</h5>
+          <p class="card-text description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorem ad voluptates aut sunt at totam molestiae tenetur. Eius ab
+            repellat inventore doloribus illo doloremque iste explicabo aliquam
+            voluptas quam?
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;12</span>
+            <a href="#" class="btn btn-success ml-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/57445/golden-pheasant-bird-exotic-wildlife-57445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Golden Pheasant</h5>
+          <p class="card-text description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorem ad voluptates aut sunt at totam molestiae tenetur. Eius ab
+            repellat inventore doloribus illo doloremque iste explicabo aliquam
+            voluptas quam?
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;12</span>
+            <a href="#" class="btn btn-success ml-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/57445/golden-pheasant-bird-exotic-wildlife-57445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Golden Pheasant</h5>
+          <p class="card-text description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorem ad voluptates aut sunt at totam molestiae tenetur. Eius ab
+            repellat inventore doloribus illo doloremque iste explicabo aliquam
+            voluptas quam?
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;12</span>
+            <a href="#" class="btn btn-success ml-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/57445/golden-pheasant-bird-exotic-wildlife-57445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Golden Pheasant</h5>
+          <p class="card-text description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            dolorem ad voluptates aut sunt at totam molestiae tenetur. Eius ab
+            repellat inventore doloribus illo doloremque iste explicabo aliquam
+            voluptas quam?
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;12</span>
+            <a href="#" class="btn btn-success ml-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <% for( let index = 0; index < products.length; index++ ) { 
+      let product = products[index];
+      %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img
+            src="<%= product.imagePath %>"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= product.title %></h5>
+            <p class="card-text description">
+              <%= product.description %>
+            </p>
+            <div class="row align-items-center p-2">
+              <span class="price">&#8377;<%= product.price %></span>
+              <a href="#" class="btn btn-success ml-auto">Add shopping cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>

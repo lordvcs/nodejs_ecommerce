@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <h2>Sign Up</h2>
+    <% if (messages.length) { %>
+      <div class="alert alert-danger" role="alert">
+        <% for( let index = 0; index < messages.length; index++ ) { %>
+          <p><%= messages[index] %></p>
+        <% } %>
+      </div>
+    <% } %>
+    <form action="/user/signup" method="post">
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="text" id="email" name="email" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" class="form-control" />
+      </div>
+      <input type="hidden" name="_csrf" , value="<%- csrfToken %>" />
+      <button type="submit" class="btn btn-primary">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
