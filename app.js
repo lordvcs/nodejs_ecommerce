@@ -38,7 +38,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/public", express.static(path.join(__dirname, "public")));
-
+// Setup res.locals
+app.use(function (req, res, next) {
+  res.locals.isAuth = req.isAuthenticated();
+  next();
+});
 app.use("/user", userRouter);
 app.use("/", indexRouter);
 
