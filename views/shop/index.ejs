@@ -110,28 +110,31 @@
         </div>
       </div>
     </div> -->
-    <% for( let index = 0; index < products.length; index++ ) { 
-      let product = products[index];
-      %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img
-            src="<%= product.imagePath %>"
-            class="card-img-top img-fluid"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title"><%= product.title %></h5>
-            <p class="card-text description">
-              <%= product.description %>
-            </p>
-            <div class="row align-items-center p-2">
-              <span class="price">&#8377;<%= product.price %></span>
-              <a href="#" class="btn btn-success ml-auto">Add shopping cart</a>
-            </div>
+    <% for( let index = 0; index < products.length; index++ ) { let product =
+    products[index]; %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="<%= product.imagePath %>"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= product.title %></h5>
+          <p class="card-text description">
+            <%= product.description %>
+          </p>
+          <div class="row align-items-center p-2">
+            <span class="price">&#8377;<%= product.price %></span>
+            <a
+              href="/add-to-cart/<%= product.id%>"
+              class="btn btn-success ml-auto"
+              >Add shopping cart</a
+            >
           </div>
         </div>
       </div>
+    </div>
     <% } %>
   </div>
 </div>
