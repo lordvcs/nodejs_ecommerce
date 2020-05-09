@@ -1,0 +1,54 @@
+<% if (session.cart) { %>
+<div class="row">
+  <div class="col-sm-6">
+    <ul class="list-group">
+      <% for( const key in session.cart.items ) { %>
+      <li class="list-group-item d-flex align-items-center">
+        <strong><%= session.cart.items[key].item.title %> </strong>
+        <span class="badge badge-success mx-2"
+          >&#8377;<%= session.cart.items[key].item.price %></span
+        >
+        <div class="btn-group">
+          <button
+            class="btn btn-primary btn-sm dropdown-toggle"
+            data-toggle="dropdown"
+            type="button"
+          >
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="#">Remove 1</a></li>
+            <li class="dropdown-item"><a href="#">Remove all</a></li>
+          </ul>
+        </div>
+        <span class="badge badge-dark badge-pill ml-auto"
+          ><%= session.cart.items[key].qty %></span
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    Total: <strong>&#8377;<%= session.cart.totalPrice %> </strong>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-sm-6">
+    <a href="/checkout" class="btn btn-success" type="button">Checkout</a>
+  </div>
+</div>
+<% } else { %>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>No items in cart</h3>
+  </div>
+</div>
+<% } %>
+
+<!-- <div class="row">
+  
+
+ -->

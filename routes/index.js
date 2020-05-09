@@ -21,4 +21,15 @@ router.get("/add-to-cart/:id", function (req, res) {
   });
 });
 
+router.get("/shopping-cart", function (req, res) {
+  res.render("shop/shopping-cart");
+});
+
+router.get("/checkout", function (req, res) {
+  if (!req.session.cart) {
+    res.redirect("/shopping-cart");
+  }
+  res.render("shop/checkout");
+});
+
 module.exports = router;
