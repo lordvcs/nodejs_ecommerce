@@ -25,11 +25,22 @@ router.get("/shopping-cart", function (req, res) {
   res.render("shop/shopping-cart");
 });
 
-router.get("/checkout", function (req, res) {
+router.get("/checkout", async function (req, res) {
   if (!req.session.cart) {
     res.redirect("/shopping-cart");
   }
-  res.render("shop/checkout");
+  let cart = new Cart(req.session.cart);
+  // Set your secret key. Remember to switch to your live secret key in production!
+  // See your keys here: https://dashboard.stripe.com/account/apikeys
+  const stripe = require("stripe")(process.env.STRIPE_API_KEY);
+  console.log("amount", cart.totalPrice * 10);
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: cart.totalPrice * 10,
+    currency: "inr",
+    // Verify your integration in this guide by including this parameter
+    metadata: { integration_check: "accept_a_payment" },
+  });
+  res.render("shop/checkout", { clientSecret: paymentIntent.client_secret });
 });
 
 module.exports = router;

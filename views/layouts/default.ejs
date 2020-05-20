@@ -20,6 +20,7 @@
     <title><%- typeof title != 'undefined' ? title : 'No title' %></title>
   </head>
   <body>
+    <script src="/public/js/jquery-3.4.1.slim.min.js"></script>
     <%- include('../partials/header') %>
     <div class="container">
       <%- body %>
@@ -27,7 +28,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/public/js//jquery-3.4.1.slim.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
